@@ -1,0 +1,67 @@
+@import "src/style/Global";
+
+.mainHeader {
+  display: flex;
+  flex-flow: row wrap;
+  background-color: $Contrast_Theme;
+  justify-content: space-between;
+
+
+  img {
+    background-color: $Contrast_Theme;
+    border-top: $Dark_Theme 4px solid;
+    border-bottom: $Dark_Theme 4px solid;
+    border-radius: $Border_Application;
+    margin-left: 0.8rem;
+    margin-bottom: 0.3rem;
+    margin-top: 0.3rem;
+    width: 8%;
+
+
+  }
+
+  .buttonMain {
+    cursor: pointer;
+    margin: 3rem;
+
+    a {
+      all: unset;
+      background-color: $Medium_Theme;
+      border-radius: $Border_Application;
+      margin-left: 0.8rem;
+      margin-right: 0.8rem;
+      padding: 0.8rem;
+      color: $Contrast_Theme;
+      transition: 0.5s;
+    }
+
+    a:hover {
+      background-color: $Dark_Theme;
+      color: $Contrast_Theme;
+      border: $Contrast_Theme 2px solid;
+    }
+
+
+  }
+
+}
+
+
+@media (max-width: $screen-sm-min) {
+  .mainHeader {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+
+    img {
+      width: 30%;
+    }
+
+    .buttonMain {
+      a {
+        padding: 0.5rem;
+      }
+    }
+  }
+}

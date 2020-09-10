@@ -1,0 +1,87 @@
+@import "src/style/Global";
+
+.containerMain {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 1rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
+
+
+  .articleMain {
+    margin: 1rem;
+    text-align: left;
+    width: 50%;
+    cursor: pointer;
+
+    h3 {
+      font-size: 2rem;
+    }
+
+    p {
+      box-sizing: border-box;
+      font-size: 20px;
+      padding: 1rem;
+
+    }
+
+    a {
+
+      all: unset;
+      padding: 1rem;
+      font-size: 1.25rem;
+      border: $Contrast_Theme 2px solid;
+      border-radius: $Border_Application;
+      background-color: $Medium_Theme;
+      color: $Contrast_Theme;
+      transition: 0.5s;
+    }
+
+    a:hover {
+      background-color: $Contrast_Theme;
+      color: $Dark_Theme;
+      border: $Dark_Theme 2px solid;
+    }
+
+
+  }
+
+  .imgMain {
+    img {
+      border-radius: $Border_Application;
+      background-color: $Brown_Light_Theme;
+    }
+  }
+
+}
+
+@media (max-width: $screen-sm-min) {
+  .containerMain {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+
+    .articleMain {
+
+      a {
+
+
+        padding: 0.5rem;
+        font-size: 1rem;
+
+      }
+
+
+    }
+
+    .imgMain {
+      img {
+        width: 8rem;
+      }
+
+    }
+  }
+}
