@@ -3,7 +3,7 @@
 .mainHeader {
   display: flex;
   flex-flow: row wrap;
-  background-color: $Contrast_Theme;
+  background-color: $Medium_Theme;
   justify-content: space-between;
 
 
@@ -36,9 +36,9 @@
     }
 
     a:hover {
-      background-color: $Dark_Theme;
-      color: $Contrast_Theme;
-      border: $Contrast_Theme 2px solid;
+      background-color: $Contrast_Theme;
+      color: $Dark_Theme;
+      border: $Dark_Theme 2px solid;
     }
 
 
