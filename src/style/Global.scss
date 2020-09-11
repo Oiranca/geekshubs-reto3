@@ -1,5 +1,5 @@
 
-/* Application Color */
+//Application Color
 
 $Dark_Theme:#295FA6;
 $Medium_Theme:#3B82BF;
@@ -7,7 +7,7 @@ $Brown_Dark_Theme:#BF7E45;
 $Brown_Light_Theme:#D9A566;
 $Contrast_Theme:#F2EEAE;
 
-/* Border Radius */
+//Border Radius
 
 $Border_Application:0.8rem;
 
@@ -15,7 +15,6 @@ $Border_Application:0.8rem;
 // Media queries breakpoints
 // ==================================
 //
-//Define the breakpoints at which your layout will change, adapting to different screen sizes.
 
 // Extra small screen / phone
 $screen-xs-min:                											480px !default;
@@ -32,7 +31,7 @@ $screen-lg-min:                											1200px !default;
 // Large scree / wider desktop
 $screen-lg-med:                     									1260px !default;
 
-// So media queries don't overlap when required, provide a maximum
+
 $screen-xs-max:             											($screen-sm-min - 1) !default;
 $screen-sm-max:                											($screen-md-min - 1) !default;
 $screen-md-max:                											($screen-lg-min - 1) !default;

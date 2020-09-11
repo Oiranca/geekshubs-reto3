@@ -64,7 +64,7 @@ const Main = (props) => {
                     </h3>
 
                     <p>Con la herramienta <b>Cards and Tasks</b> podrá automatizar tareas, para así poder realizar el
-                    tabajo con más <b>dinamismo</b></p>
+                    tabajo con más <b>dinamismo</b>.</p>
 
                 </div>
 
