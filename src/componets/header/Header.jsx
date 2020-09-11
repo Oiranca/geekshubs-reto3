@@ -2,7 +2,7 @@ import React from "react";
 import {NavLink} from "react-router-dom";
 import './Header.scss'
 import logo from '../../img/logo/LogoMakr.png'
-import Main from "../main/Main";
+
 
 
 const Header = (props) => {
@@ -23,7 +23,7 @@ const Header = (props) => {
 
             </div>
 
-            <Main/>
+
 
         </React.Fragment>
 
