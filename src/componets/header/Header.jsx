@@ -12,11 +12,11 @@ const Header = (props) => {
             <div className="mainHeader">
                 <img src={logo} alt="Logo"/>
                 <div className="buttonMain">
-                    <NavLink to="/popular">
+                    <NavLink to="/boardsMain">
                         <span className="linkMain">Iniciar Sesión</span>
 
                     </NavLink>
-                    <NavLink to="/upcoming">
+                    <NavLink to="/signUp">
                         <span className="linkMain">Registrase</span>
                     </NavLink>
                 </div>

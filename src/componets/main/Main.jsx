@@ -4,12 +4,13 @@ import multiTasks from '../../img/main/multitask.png'
 import storyboard from '../../img/main/storyboard.png'
 import automatic from '../../img/main/automatizacion.png'
 import {NavLink} from "react-router-dom";
+import Header from "../header/Header";
 
 const Main = (props) => {
 
     return (
         <React.Fragment>
-
+            <Header/>
             <section className="containerMain">
                 <div className="articleMain">
 
@@ -19,7 +20,7 @@ const Main = (props) => {
 
                     <p>Con la herramienta <b>Cards and Tasks</b> podrá organizar todo lo necesario para llevar a cabo
                         las tareas tanto individuales como del equipo de trabajo.</p>
-                    <NavLink to="/popular">
+                    <NavLink to="/signUp">
                         <span className="linkMain">Comenzar...</span>
                     </NavLink>
 
