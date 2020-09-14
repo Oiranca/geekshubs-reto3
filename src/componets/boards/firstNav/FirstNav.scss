@@ -1,0 +1,74 @@
+@import "../../../style/Global";
+
+
+.navHeader {
+  display: flex;
+  background-color: $Medium_Theme;
+  justify-content: space-between;
+  padding: 0.5rem;
+
+  .headerTitle {
+    display: flex;
+    align-items: center;
+    img {
+      width: 3rem;
+
+    }
+
+    p {
+      all: unset;
+      color: white;
+      font-family: sans-serif;
+      font-weight: bold;
+      font-size: 1.5rem;
+      padding: 0.3rem;
+    }
+  }
+
+
+  .header-button {
+    border: 0;
+    background-color: $Background_Color_SVG_Button;
+    margin: 0.5rem 0.25rem;
+    padding: unset;
+    cursor: pointer;
+
+
+    svg {
+      width: 2rem;
+      height: 2rem;
+
+      image {
+        width: 1.5rem;
+        height: 1.5rem;
+
+      }
+
+    }
+
+  }
+
+  .header-button:hover {
+    background-color: $Contrast_Theme;
+
+  }
+}
+
+@media (max-width: $screen-sm-min) {
+  .navHeader {
+    .header-button {
+
+      margin: 0.5rem 0;
+
+    }
+
+    .headerTitle {
+      p {
+        display: none;
+      }
+    }
+
+  }
+}
+
+

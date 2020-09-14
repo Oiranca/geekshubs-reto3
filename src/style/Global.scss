@@ -1,5 +1,5 @@
 
-/* Application Color */
+//Application Color
 
 $Dark_Theme:#295FA6;
 $Medium_Theme:#3B82BF;
@@ -7,15 +7,25 @@ $Brown_Dark_Theme:#BF7E45;
 $Brown_Light_Theme:#D9A566;
 $Contrast_Theme:#F2EEAE;
 
-/* Border Radius */
+//Old Color
+$Dark_Theme_Old:#28df99;
+$Medium_Theme_Old:#31238C;
+$Green_Dark_Theme_Old:#03A696;
+$Green_Light_Theme_Old:#7DBF73;
+$Contrast_Theme_Old:#D9C14A;
+
+//Border Radius
 
 $Border_Application:0.8rem;
+
+//SVG Buttons Background Color
+
+$Background_Color_SVG_Button:hsla(0, 0%, 100%, .3);
 
 // ==================================
 // Media queries breakpoints
 // ==================================
 //
-//Define the breakpoints at which your layout will change, adapting to different screen sizes.
 
 // Extra small screen / phone
 $screen-xs-min:                											480px !default;
@@ -32,7 +42,7 @@ $screen-lg-min:                											1200px !default;
 // Large scree / wider desktop
 $screen-lg-med:                     									1260px !default;
 
-// So media queries don't overlap when required, provide a maximum
+
 $screen-xs-max:             											($screen-sm-min - 1) !default;
 $screen-sm-max:                											($screen-md-min - 1) !default;
 $screen-md-max:                											($screen-lg-min - 1) !default;

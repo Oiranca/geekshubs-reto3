@@ -1,0 +1,40 @@
+@import "src/style/Global";
+
+
+.secondNav {
+  background-color: hsla(208, 53%, 49%, .3);
+
+  .header-button {
+    border: 0;
+    background-color: hsla(0, 0%, 100%, .3);
+    margin: 0.5rem 0.25rem;
+    padding: unset;
+    cursor: pointer;
+
+
+    svg {
+      width: 8rem;
+      height: 2rem;
+
+      image {
+        width: 1.5rem;
+        height: 1.5rem;
+
+      }
+      text{
+        font-size: 1rem;
+      }
+
+
+    }
+
+  }
+
+  .header-button:hover {
+    background-color: $Contrast_Theme;
+
+  }
+
+
+}
+

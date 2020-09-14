@@ -5,6 +5,9 @@
   flex-flow: row wrap;
   background-color: $Medium_Theme;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
 
 
   img {
@@ -49,6 +52,7 @@
 
 @media (max-width: $screen-sm-min) {
   .mainHeader {
+
     display: flex;
     flex-wrap: wrap;
     text-align: center;
