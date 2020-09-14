@@ -3,14 +3,21 @@
 
 .secondNav {
   background-color: hsla(208, 53%, 49%, .3);
+  align-items: center;
+.navRight{
+  align-items: center;
+}
+
+
 
   #starNav {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color:$Background_Color_SVG_Button;
+    background-color: $Background_Color_SVG_Button;
     width: 2rem;
     height: 2rem;
+    margin-right: 0.50rem;
 
 
   }
@@ -19,26 +26,37 @@
     background-color: $Contrast_Theme;
   }
 
-  #buttonType {
+  .buttonType {
     display: flex;
     background-color: $Background_Color_SVG_Button;
     width: 8rem;
     height: 2rem;
     align-items: center;
     justify-content: center;
-    color: $Dark_Theme;
-    font-weight: bold;
+    margin-right: 0.50rem;
+
+    #dropType {
+      color: $Dark_Theme;
+      font-weight: bold;
+
+    }
   }
 
   .buttonBigWidth {
     display: flex;
     background-color: $Background_Color_SVG_Button;
-    width: 10rem;
+    width: 12rem;
     height: 2rem;
     align-items: center;
     justify-content: center;
-    color: $Dark_Theme;
-    font-weight: bold;
+    margin: auto;
+
+    #dropVisibility {
+      color: $Dark_Theme;
+      font-weight: bold;
+
+
+    }
   }
 
   .buttonMediumWidth {
@@ -50,11 +68,21 @@
     justify-content: center;
     color: $Dark_Theme;
     font-weight: bold;
+    margin-right: 0.5rem;
+
+    #dropButler {
+      color: $Dark_Theme;
+      font-weight: bold;
+
+
+    }
 
   }
 
   .iconsFontAwesome {
-    margin-right: 0.50rem;
+    margin-right: 0.5rem;
     background-color: transparent;
   }
+
+
 }
