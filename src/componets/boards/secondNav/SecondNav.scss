@@ -3,11 +3,18 @@
 
 .secondNav {
   background-color: hsla(208, 53%, 49%, .3);
+  justify-content: space-between;
   align-items: center;
-.navRight{
-  align-items: center;
-}
 
+  .navLeft {
+    align-items: center;
+
+  }
+
+  .navRight {
+    align-items: center;
+
+  }
 
 
   #starNav {
@@ -35,11 +42,7 @@
     justify-content: center;
     margin-right: 0.50rem;
 
-    #dropType {
-      color: $Dark_Theme;
-      font-weight: bold;
 
-    }
   }
 
   .buttonBigWidth {
@@ -50,13 +53,15 @@
     align-items: center;
     justify-content: center;
     margin: auto;
+    color: $Dark_Theme;
+    font-weight: bold;
 
-    #dropVisibility {
+    #dropsNavs {
       color: $Dark_Theme;
       font-weight: bold;
-
-
     }
+
+
   }
 
   .buttonMediumWidth {
@@ -70,19 +75,85 @@
     font-weight: bold;
     margin-right: 0.5rem;
 
-    #dropButler {
-      color: $Dark_Theme;
-      font-weight: bold;
-
-
-    }
 
   }
+
 
   .iconsFontAwesome {
     margin-right: 0.5rem;
     background-color: transparent;
+    color: $Green_Light_Theme_Old;
   }
 
 
 }
+
+.containerModals {
+  display: flex;
+  flex-direction: row;
+
+  .modalType {
+    overflow: hidden;
+    margin-left: 200px;
+    margin-top: -39px;
+
+    width: 304px;
+  }
+
+  .modalVisibility {
+    overflow: hidden;
+    margin-left: 5px;
+    margin-top: -39px;
+    width: 304px;
+  }
+}
+
+
+@media (max-width: $screen-sm-min) {
+
+  .secondNav {
+    justify-content: center!important;
+
+    .navLeft {
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+
+
+    }
+
+    .navRight {
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+
+
+    }
+
+    .buttonBigWidth {
+      margin: unset;
+    }
+  }
+
+  .containerModals {
+    display: flex;
+    flex-direction: column;
+
+
+    .modalType {
+      overflow: hidden;
+      margin: auto;
+      width: 100%;
+
+    }
+
+    .modalVisibility {
+      overflow: hidden;
+      margin: auto;
+      width: 100%;
+
+    }
+
+  }
+}
+
