@@ -1,49 +1,46 @@
 import React, {useState} from "react";
 import './SecondNav.scss'
-import {Button, Form, FormControl, Nav, Navbar, NavDropdown} from "react-bootstrap";
+import {Form, FormControl, Nav, Navbar} from "react-bootstrap";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCalendarAlt, faEye, faConciergeBell, faEllipsisH, faStar} from '@fortawesome/free-solid-svg-icons'
-import ModalBoardsType from "../../modals/ModalBoardType";
-import ModalBoardsVisibility from "../../modals/ModalBoardVisibility";
-import Sidebar from "../../sidebar/Sidebar";
+import Sidebar from "../sidebar/Sidebar";
+import SidebarType from "./sidebarType/SidebarType";
+import SidebarVisibility from "./sidebarVisibility/SidebarVisibility";
 
 
 const SecondNav = (props) => {
 
-
-    const [show, setShow] = useState(false);
-    const showModal = () => {
-        setShow(!show);
-
-        setShowBis(false);
-        setSidebar(false);
-    };
-
-
-    const [showBis, setShowBis] = useState(false);
-
-    const showModalBis = () => {
-        setShowBis(!showBis);
-
-        setShow(false);
-        setSidebar(false);
-    };
 
     const [sidebar, setSidebar] = useState(false);
 
     const showSidebar = () => {
 
         setSidebar(!sidebar);
+        setSidebarType(false);
+        setSidebarVisibility(false)
 
-        setShow(false);
-        setShowBis(false);
+    };
+    const [sidebarType, setSidebarType] = useState(false);
+
+    const showSidebarType = () => {
+
+        setSidebarType(!sidebarType);
+        setSidebar(false);
+        setSidebarVisibility(false);
+
 
     };
 
-    const pruebas =(e)=>{
-        console.log(e);
-    }
+    const [sidebarVisibility, setSidebarVisibility] = useState(false);
 
+    const showSidebarVisibility = () => {
+
+        setSidebarVisibility(!sidebarVisibility);
+        setSidebar(false);
+        setSidebarType(false);
+
+
+    };
     return (
         <React.Fragment>
             <Navbar className="secondNav" expand="lg">
@@ -55,15 +52,16 @@ const SecondNav = (props) => {
                     <div id="starNav">
                         <FontAwesomeIcon icon={faStar}/>
                     </div>
-                    <Nav.Link onClick={showModal}>
 
+                    <Nav.Link onClick={showSidebarType}>
                         <div className="buttonBigWidth">
-
                             <span>  Board Type</span>
-
                         </div>
                     </Nav.Link>
-                    <Nav.Link onClick={showModalBis}>
+
+                    <SidebarType show={sidebarType}/>
+
+                    <Nav.Link onClick={showSidebarVisibility}>
                         <div className="buttonBigWidth">
                             <FontAwesomeIcon className="iconsFontAwesome" icon={faEye}/>
 
@@ -72,6 +70,7 @@ const SecondNav = (props) => {
                         </div>
                     </Nav.Link>
 
+                    <SidebarVisibility showVisibility={sidebarVisibility}/>
                 </Nav>
                 <Nav className="navRight">
                     <Nav.Link href="#link">
@@ -90,14 +89,6 @@ const SecondNav = (props) => {
                         <div className="buttonBigWidth">
                             <FontAwesomeIcon className="iconsFontAwesome" icon={faEllipsisH}/>
                             <span>Mostar Menú</span>
-                            {/*<NavDropdown title="Mostrar Menú" id="dropsNavs">*/}
-                            {/*    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>*/}
-                            {/*    <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>*/}
-                            {/*    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>*/}
-                            {/*    <NavDropdown.Divider/>*/}
-                            {/*    <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>*/}
-                            {/*</NavDropdown>*/}
-
                         </div>
                     </Nav.Link>
                     <Sidebar sidebarShow={sidebar} sidebarClose={showSidebar}/>
@@ -105,16 +96,7 @@ const SecondNav = (props) => {
                 </Nav>
 
             </Navbar>
-            <div className="containerModals">
-                <div className="modalType">
 
-                    <ModalBoardsType value={show}/>
-                </div>
-                <div className="modalVisibility">
-
-                    <ModalBoardsVisibility show={showBis}/>
-                </div>
-            </div>
         </React.Fragment>
     );
 

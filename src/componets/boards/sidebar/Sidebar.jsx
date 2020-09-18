@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
-import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import {SidebarData} from "./SidebarData";
 import "./Sidebar.scss";
@@ -21,18 +20,34 @@ const Sidebar = (props) => {
                 <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
                     <ul className="nav-menu-items" onClick={sidebarClose}>
                         <li className="navbar-toogle">
+                            <span>Menú</span>
+
                             <Link to="#" className="menu-bars">
                                 <AiIcons.AiOutlineClose/>
                             </Link>
+
                         </li>
                         {SidebarData.map((items, index) => {
                             return (
-                                <li key={index} className={items.cName}>
-                                    <Link to={items.path}>
-                                        {items.icon}
-                                        <span>{items.title}</span>
-                                    </Link>
-                                </li>
+
+                                <ul key={index} className={items.cName}>
+
+                                    {
+                                        items.itemsData.map((list, listIndex) => {
+                                            return (
+                                                <li key={listIndex}>
+                                                    <Link to={list.itemsPath}>
+                                                        {list.itemsIcon}
+                                                        <span>{list.itemsTitle}</span>
+
+                                                    </Link>
+                                                </li>
+                                            )
+                                        })
+                                    }
+
+                                </ul>
+
                             );
                         })}
                     </ul>
