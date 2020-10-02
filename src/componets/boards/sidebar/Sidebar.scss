@@ -1,0 +1,67 @@
+@import "../../../style/Global";
+
+.menu-bars {
+  margin-left: 2rem;
+  background: none;
+
+}
+
+.nav-menu {
+  background-color: $Medium_Theme;
+  width: 250px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 50px;
+  right: -100%;
+  transition: 850ms;
+}
+
+.nav-menu.active {
+  right: 0;
+  transition: 350ms;
+}
+
+
+.nav-menu-items {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  list-style: none;
+  color: white;
+  padding: 1rem 1rem;
+
+  span {
+    margin-left: 1rem;
+  }
+
+  .navbar-toogle {
+    font-size: 2rem;
+
+  }
+
+}
+
+.nav-text {
+  border-top: 0.05rem solid $Contrast_Theme ;
+
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 8px 1px 8px 1px;
+  margin-top: 1rem;
+
+  a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  a:hover {
+    background-color: navy;
+  }
+}

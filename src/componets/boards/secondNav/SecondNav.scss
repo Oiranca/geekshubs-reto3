@@ -3,14 +3,28 @@
 
 .secondNav {
   background-color: hsla(208, 53%, 49%, .3);
+  justify-content: space-between;
+  align-items: center;
+
+  .navLeft {
+    align-items: center;
+
+  }
+
+  .navRight {
+    align-items: center;
+
+  }
+
 
   #starNav {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color:$Background_Color_SVG_Button;
+    background-color: $Background_Color_SVG_Button;
     width: 2rem;
     height: 2rem;
+    margin-right: 0.50rem;
 
 
   }
@@ -19,26 +33,35 @@
     background-color: $Contrast_Theme;
   }
 
-  #buttonType {
+  .buttonType {
     display: flex;
     background-color: $Background_Color_SVG_Button;
     width: 8rem;
     height: 2rem;
     align-items: center;
     justify-content: center;
-    color: $Dark_Theme;
-    font-weight: bold;
+    margin-right: 0.50rem;
+
+
   }
 
   .buttonBigWidth {
     display: flex;
     background-color: $Background_Color_SVG_Button;
-    width: 10rem;
+    width: 12rem;
     height: 2rem;
     align-items: center;
     justify-content: center;
+    margin: auto;
     color: $Dark_Theme;
     font-weight: bold;
+
+    #dropsNavs {
+      color: $Dark_Theme;
+      font-weight: bold;
+    }
+
+
   }
 
   .buttonMediumWidth {
@@ -50,11 +73,86 @@
     justify-content: center;
     color: $Dark_Theme;
     font-weight: bold;
+    margin-right: 0.5rem;
+
 
   }
+
 
   .iconsFontAwesome {
-    margin-right: 0.50rem;
+    margin-right: 0.5rem;
     background-color: transparent;
+    color: $Green_Light_Theme_Old;
+  }
+
+
+}
+
+.containerModals {
+  display: flex;
+  flex-direction: row;
+
+  .modalType {
+    overflow: hidden;
+    margin-left: 200px;
+    margin-top: -39px;
+    width: 304px;
+  }
+
+  .modalVisibility {
+    overflow: hidden;
+    margin-left: 5px;
+    margin-top: -39px;
+    width: 304px;
   }
 }
+
+
+@media (max-width: $screen-sm-min) {
+
+  .secondNav {
+    justify-content: center!important;
+
+    .navLeft {
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+
+
+    }
+
+    .navRight {
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+
+
+    }
+
+    .buttonBigWidth {
+      margin: unset;
+    }
+  }
+
+  .containerModals {
+    display: flex;
+    flex-direction: column;
+
+
+    .modalType {
+      overflow: hidden;
+      margin: auto;
+      width: 100%;
+
+    }
+
+    .modalVisibility {
+      overflow: hidden;
+      margin: auto;
+      width: 100%;
+
+    }
+
+  }
+}
+
