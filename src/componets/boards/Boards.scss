@@ -21,7 +21,8 @@
         height: 1.5rem;
 
       }
-      text{
+
+      text {
         font-size: 1rem;
       }
 
@@ -35,6 +36,55 @@
 
   }
 
+
+}
+
+.containerTodo {
+  display: flex;
+  margin: 2rem 2rem;
+  align-items: center;
+  text-align: center;
+
+  .firstAddTodo {
+    background: aliceblue;
+
+
+    span {
+      margin: 0 0.5rem;
+    }
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+
+  }
+
+  .inputTodo {
+    display: flex;
+    background: aliceblue;
+
+    a {
+      margin: 0 1rem;
+      padding: 0;
+
+      svg {
+        color: $Dark_Theme;
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+
+
+
+  }
+
+  .inputAddTodo {
+    border: transparent;
+    background: transparent;
+    text-align: center;
+  }
 
 }
 
