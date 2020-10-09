@@ -1,0 +1,60 @@
+@import "src/style/Global";
+
+.containerTodo {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  margin: 0.5rem 2rem;
+
+  h4 {
+    margin: 0.5rem 0;
+    font-weight: bolder;
+    text-decoration: underline $Dark_Theme;
+  }
+
+  input {
+    border: 0.05rem solid $Dark_Theme;
+    text-align: center;
+    width: 90%;
+    margin: 0.5rem 0;
+    border-radius: $Border_Application;
+  }
+
+  .todoList {
+    text-align: center;
+    color: $Dark_Theme;
+    font-weight: bold;
+    font-family: Roboto sans-serif;
+    border: 0.05rem solid $Medium_Theme;
+    border-radius: $Border_Application;
+    width: auto;
+    margin-left: 4rem;
+    background: aliceblue;
+
+
+  }
+
+  .todo {
+    background-color: $Contrast_Theme;
+    color: $Dark_Theme;
+    margin: 0.5rem 0.5rem;
+    border-top: 0.05rem solid $Medium_Theme;
+    border-bottom: 0.05rem solid $Medium_Theme;
+    border-radius: $Border_Application;
+    width: 90%;
+
+    .navTodo {
+      display: flex;
+      justify-content: center;
+
+      svg{
+        color: $Dark_Theme;
+        border: 0.05rem solid $Dark_Theme;
+        border-radius: $Border_Application;
+        width: 2.5rem;
+        height: 1.5rem;
+      }
+    }
+
+  }
+}
