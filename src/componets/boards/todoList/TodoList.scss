@@ -1,0 +1,30 @@
+@import "src/style/Global";
+
+
+.todoList {
+  height: max-content;
+  text-align: center;
+  color: $Dark_Theme;
+  font-weight: bold;
+  font-family: Roboto sans-serif;
+  border: 0.05rem solid $Medium_Theme;
+  border-radius: $Border_Application;
+  width: auto;
+  margin-left: 4rem;
+  background: aliceblue;
+
+
+  h4 {
+    margin: 0.5rem 0;
+    font-weight: bolder;
+    text-decoration: underline $Dark_Theme;
+  }
+
+  input {
+    border: 0.05rem solid $Dark_Theme;
+    text-align: center;
+    width: 90%;
+    margin: 0.5rem 0;
+    border-radius: $Border_Application;
+  }
+}
