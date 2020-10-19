@@ -17,10 +17,7 @@ const reducer = (state = initialState, action) => {
       break;
 
     case 'ADD_TODO':
-      // Encontrar el todoList asociado al todo que vas añadir
-      // .find => 1 sola cosa o null
-      // .filter => X cosas filtradas por una condición
-      // Añadir el todo al todolist
+
       return {
         todoList: state.todoList.map(
           (todoContainer) => {
@@ -71,6 +68,25 @@ const reducer = (state = initialState, action) => {
       }
 
       break;
+
+    case 'ORDER_TODO':
+
+      return {
+        todoList: state.todoList.map(
+          (todoContainer) => {
+
+            if (todoContainer.id === action.payload.parentId) {
+
+
+              todoContainer.todo = action.payload.order
+
+
+            }
+
+            return todoContainer;
+          },
+        ),
+      };
 
     default:
       return state;

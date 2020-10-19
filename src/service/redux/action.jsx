@@ -34,5 +34,14 @@ const todoCompleted = (dispatch, id, idTodoList) =>
           todoListId: idTodoList,
       }
   });
+const listTodosOrder = (dispatch, id, list) =>
 
-export {addTodoList, deleteTodoAction, addTodoInList, todoCompleted};
+  dispatch({
+    type: 'ORDER_TODO',
+    payload: {
+      parentId:id,
+      order:list
+    }
+  });
+
+export {addTodoList, deleteTodoAction, addTodoInList, todoCompleted,listTodosOrder};

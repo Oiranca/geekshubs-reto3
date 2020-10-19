@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import './ContainerTodo.scss';
 import {connect} from 'react-redux';
 import {addTodoInList, deleteTodoAction, todoCompleted} from "../../../service/redux/action";
@@ -6,17 +6,14 @@ import {DragDropContext} from "react-beautiful-dnd";
 import TodoList from "../todoList/TodoList";
 
 
-const ContainerTodo = () => {
+const ContainerTodo = (props) => {
 
-  ondragend=result=>{
-
-  }
 
 
   return (
 
     <React.Fragment>
-      <div className="containerTodo" onDragEnd={ondragend}>
+      <div className="containerTodo" >
 
        <TodoList/>
 
@@ -30,7 +27,9 @@ const ContainerTodo = () => {
 
 
 
+const mapStateToProps = (state) => ({
+  todoList: state.todoList
+});
 
-
-
-export default ContainerTodo;
+const connected = connect(mapStateToProps)(ContainerTodo);
+export default connected;
