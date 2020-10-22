@@ -17,10 +17,7 @@ const reducer = (state = initialState, action) => {
       break;
 
     case 'ADD_TODO':
-      // Encontrar el todoList asociado al todo que vas añadir
-      // .find => 1 sola cosa o null
-      // .filter => X cosas filtradas por una condición
-      // Añadir el todo al todolist
+
       return {
         todoList: state.todoList.map(
           (todoContainer) => {
@@ -69,6 +66,54 @@ const reducer = (state = initialState, action) => {
 
 
       }
+
+      break;
+
+    case 'ORDER_TODO':
+
+      return {
+        todoList: state.todoList.map(
+          (todoContainer) => {
+
+            if (todoContainer.id === action.payload.parentId) {
+
+
+              todoContainer.todo = action.payload.order
+
+
+            }
+
+            return todoContainer;
+          },
+        ),
+      };
+    case 'LIST_CONTAINER':
+
+
+      state.todoList = action.payload.orderList
+
+      break;
+
+    case 'MOVE_TODO':
+
+
+      const listForRemove = state.todoList.find(itemTodo => itemTodo.id === Number(action.payload.idContainerLeave));
+
+      if (listForRemove) {
+
+        const todoToMove = listForRemove.todo.find(moveTodo => moveTodo.idTodo === Number(action.payload.idTodoToMove))
+
+        const listToMove = state.todoList.find(itemForMove => itemForMove.id === Number(action.payload.idContainerEnter))
+
+        if (Number(action.payload.idContainerLeave) !== Number(action.payload.idContainerEnter)) {
+
+
+          listForRemove.todo = listForRemove.todo.filter(removeTodo => removeTodo.idTodo !== Number(action.payload.idTodoToMove))
+          listToMove.todo.push(todoToMove);
+        }
+
+      }
+
 
       break;
 
