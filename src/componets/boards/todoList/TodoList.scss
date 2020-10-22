@@ -12,6 +12,7 @@
   width: auto;
   margin-left: 4rem;
   background: aliceblue;
+  z-index: 1;
 
 
   h4 {
@@ -26,5 +27,8 @@
     width: 90%;
     margin: 0.5rem 0;
     border-radius: $Border_Application;
+  }
+  .todo{
+    z-index: 2;
   }
 }

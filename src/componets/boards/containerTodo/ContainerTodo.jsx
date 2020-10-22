@@ -1,12 +1,9 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import './ContainerTodo.scss';
-import {connect} from 'react-redux';
-import {addTodoInList, deleteTodoAction, todoCompleted} from "../../../service/redux/action";
-import {DragDropContext} from "react-beautiful-dnd";
 import TodoList from "../todoList/TodoList";
 
 
-const ContainerTodo = (props) => {
+const ContainerTodo = () => {
 
 
 
@@ -14,6 +11,8 @@ const ContainerTodo = (props) => {
 
     <React.Fragment>
       <div className="containerTodo" >
+
+
 
        <TodoList/>
 
@@ -27,9 +26,4 @@ const ContainerTodo = (props) => {
 
 
 
-const mapStateToProps = (state) => ({
-  todoList: state.todoList
-});
-
-const connected = connect(mapStateToProps)(ContainerTodo);
-export default connected;
+export default ContainerTodo;

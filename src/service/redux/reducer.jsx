@@ -87,6 +87,35 @@ const reducer = (state = initialState, action) => {
           },
         ),
       };
+    case 'LIST_CONTAINER':
+
+
+      state.todoList = action.payload.orderList
+
+      break;
+
+    case 'MOVE_TODO':
+
+
+      const listForRemove = state.todoList.find(itemTodo => itemTodo.id === Number(action.payload.idContainerLeave));
+
+      if (listForRemove) {
+
+        const todoToMove = listForRemove.todo.find(moveTodo => moveTodo.idTodo === Number(action.payload.idTodoToMove))
+
+        const listToMove = state.todoList.find(itemForMove => itemForMove.id === Number(action.payload.idContainerEnter))
+
+        if (Number(action.payload.idContainerLeave) !== Number(action.payload.idContainerEnter)) {
+
+
+          listForRemove.todo = listForRemove.todo.filter(removeTodo => removeTodo.idTodo !== Number(action.payload.idTodoToMove))
+          listToMove.todo.push(todoToMove);
+        }
+
+      }
+
+
+      break;
 
     default:
       return state;

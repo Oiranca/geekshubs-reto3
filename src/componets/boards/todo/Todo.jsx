@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import './Todo.scss'
 import {connect} from 'react-redux';
-import {deleteTodoAction, listTodosOrder, todoCompleted} from "../../../service/redux/action";
+import {deleteTodoAction, listTodosOrder, moveTodo, todoCompleted} from "../../../service/redux/action";
 import {NavLink} from "react-bootstrap";
 import * as TiIcons from 'react-icons/ti';
 import * as RiIcons from 'react-icons/ri';
@@ -16,42 +16,44 @@ const initialDnDState = {
 
 }
 let newList;
+let parentFrom=0;
+let idTodoToMove;
+
 
 const Todo = (props) => {
 
+  let list;
 
-  const lists = props.todoList;
-  const [list, setList] = useState([]);
+  const searchTodoInList = (idParent) => {
+    const searchParent = props.todoList.find(todoInParent => todoInParent.id === idParent);
 
+    list = searchParent.todo;
 
-  useEffect(() => {
-
-
-    setList(lists.map((list) => list.todo).flat());
-
-  }, [props.todoList])
+  }
 
 
   const [dragAndDrop, setDragAndDrop] = useState(initialDnDState);
 
 
   const onDragStart = (event) => {
-
-
+    searchTodoInList(props.idParent);
     const initialPosition = Number(event.currentTarget.dataset.position);
+
     setDragAndDrop({
       ...dragAndDrop,
       draggedFrom: initialPosition,
       isDragging: true,
       originalOrder: list,
     })
-
+    parentFrom =props.idParent;
+    idTodoToMove=Number(event.currentTarget.id);
 
   };
 
   const onDragOver = (event) => {
+
     event.preventDefault();
-     newList = dragAndDrop.originalOrder;
+    newList = dragAndDrop.originalOrder;
     const draggedFrom = dragAndDrop.draggedFrom;
     const draggedTo = Number(event.currentTarget.dataset.position);
     const itemDragged = newList[draggedFrom];
@@ -64,30 +66,53 @@ const Todo = (props) => {
       ...remainingItems.slice(draggedTo)
     ]
 
+
     if (draggedTo !== dragAndDrop.draggedTo) {
       setDragAndDrop({
         ...dragAndDrop,
 
+        // save the updated list state
+        // we will render this onDrop
         updatedOrder: newList,
         draggedTo: draggedTo
       })
     }
 
+
   };
 
-  const onDrop = () => {
+  const onDrop = (event) => {
 
-    props.order(props.idParent,newList)
 
-    setDragAndDrop({
-      ...dragAndDrop,
-      draggedFrom: null,
-      draggedTo: null,
-      isDragging: false
-    });
+    if (props.idParent===parentFrom) {
+
+      props.order(parentFrom, newList)
+
+      setDragAndDrop({
+        ...dragAndDrop,
+        draggedFrom: null,
+        draggedTo: null,
+        isDragging: false
+
+      });
+
+    } else {
+      const idToDrop = event.currentTarget.dataset.parent;
+      props.moveTodo(parentFrom, idToDrop, idTodoToMove);
+
+    }
   };
 
 
+  const onDragEnd = (event) => {
+
+    if (props.dropEnter !== undefined && props.dropEnter !== '' && event !== undefined) {
+
+      props.moveTodo(props.idParent, props.dropEnter, event.currentTarget.id);
+
+    }
+
+  }
   return (
 
     <React.Fragment>
@@ -97,8 +122,10 @@ const Todo = (props) => {
 
 
         props.todos.map((a, index) => (
-            <div className="todo" key={a.idTodo} draggable={"true"} onDragStart={onDragStart} onDragOver={onDragOver}
-                 onDrop={onDrop} data-position={index}>
+            <div className="todo" key={a.idTodo} id={a.idTodo} draggable={"true"} onDragStart={onDragStart}
+                 onDragOver={onDragOver}
+
+                 onDrop={onDrop} onDragEnd={onDragEnd} data-position={index} data-parent={props.idParent}>
               <h4>{a.name}</h4>
               <div className="navTodo">
 
@@ -134,6 +161,8 @@ const mapDispatchToProps = (dispatch) =>
     delete: (id, todoContainer) => deleteTodoAction(dispatch, id, todoContainer),
     completed: (id, todoContainer) => todoCompleted(dispatch, id, todoContainer),
     order: (id, newOrderList) => listTodosOrder(dispatch, id, newOrderList),
+    moveTodo: (idContainerLeave, idContainerEnter, idTodo) => moveTodo(dispatch, idContainerLeave, idContainerEnter, idTodo)
+
   });
 
 const connected = connect(mapStateToProps, mapDispatchToProps)(Todo);

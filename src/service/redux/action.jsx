@@ -44,4 +44,26 @@ const listTodosOrder = (dispatch, id, list) =>
     }
   });
 
-export {addTodoList, deleteTodoAction, addTodoInList, todoCompleted,listTodosOrder};
+const listContainerOrder = (dispatch, order) =>
+
+  dispatch({
+    type: 'LIST_CONTAINER',
+    payload:{
+      orderList:order}
+
+
+  });
+
+const moveTodo = (dispatch, idContainerLeave, idContainerEnter, idTodoToMove)=>{
+  dispatch({
+
+    type: 'MOVE_TODO',
+    payload:{
+      idContainerLeave:idContainerLeave,
+      idContainerEnter:idContainerEnter,
+      idTodoToMove:idTodoToMove,
+    }
+  });
+}
+
+export {addTodoList, deleteTodoAction, addTodoInList, todoCompleted,listTodosOrder,listContainerOrder,moveTodo};

@@ -8,7 +8,7 @@ import SidebarType from "./sidebarType/SidebarType";
 import SidebarVisibility from "./sidebarVisibility/SidebarVisibility";
 
 
-const SecondNav = (props) => {
+const SecondNav = () => {
 
 
     const [sidebar, setSidebar] = useState(false);
