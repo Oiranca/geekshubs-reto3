@@ -26,6 +26,14 @@ const deleteTodoAction = (dispatch, id, idTodoList) =>
         }
     });
 
+const deleteTodoList = (dispatch, id) =>
+  dispatch({
+    type: 'DELETE_TODOLIST',
+    payload: {
+      todoListId:id,
+    }
+  });
+
 const todoCompleted = (dispatch, id, idTodoList) =>
   dispatch({
       type: 'COMPLETE_TODO',
@@ -66,4 +74,4 @@ const moveTodo = (dispatch, idContainerLeave, idContainerEnter, idTodoToMove)=>{
   });
 }
 
-export {addTodoList, deleteTodoAction, addTodoInList, todoCompleted,listTodosOrder,listContainerOrder,moveTodo};
+export {addTodoList, deleteTodoAction, deleteTodoList, addTodoInList, todoCompleted,listTodosOrder,listContainerOrder,moveTodo};

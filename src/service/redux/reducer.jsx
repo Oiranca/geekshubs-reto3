@@ -39,6 +39,7 @@ const reducer = (state = initialState, action) => {
         ),
       };
 
+
     case 'DELETE_TODO':
 
 
@@ -53,6 +54,14 @@ const reducer = (state = initialState, action) => {
       }
 
       break;
+
+
+    case 'DELETE_TODOLIST':
+
+
+     return {todoList: state.todoList.filter(itemTodoList => itemTodoList.id !== Number(action.payload.todoListId))}
+
+
 
     case 'COMPLETE_TODO':
 

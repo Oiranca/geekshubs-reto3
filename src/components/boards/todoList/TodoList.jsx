@@ -2,11 +2,13 @@ import React, {useEffect, useState} from "react";
 import './TodoList.scss'
 import {connect} from 'react-redux';
 import {
-  addTodoInList,
+  addTodoInList, deleteTodoList,
   listContainerOrder
 
 } from "../../../service/redux/action";
 import Todo from "../todo/Todo";
+import {NavLink} from "react-bootstrap";
+import * as RiIcons from "react-icons/ri";
 
 
 // //Estado incial y la nueva lista
@@ -28,6 +30,7 @@ const TodoList = (props) => {
 
   const listToContainer = props.todoList;
   const [listTodo, setListTodo] = useState([]);
+
 
 
   useEffect(() => {
@@ -57,7 +60,9 @@ const TodoList = (props) => {
 
 
   const onDragOver = (event) => {
+
 //Para coger el id del todlist donde voy hacer drop
+
     containerEnter = Number(event.currentTarget.id)
     event.preventDefault();
     newLists = dragAndDropList.originalOrderList;
@@ -119,7 +124,9 @@ const TodoList = (props) => {
 
   }
 
-
+  // const deleteList = (idForDeleted) => {
+  //   console.log(`Este es el todoList para borrar ${idForDeleted}`)
+  // }
   return (
 
     <React.Fragment>
@@ -136,7 +143,12 @@ const TodoList = (props) => {
                    onDragOver={onDragOver}
                    onDrop={onDrop} data-position={index}>
 
+                <NavLink onClick={() => props.deleteList(todoLists.id)}>
+                  <RiIcons.RiDeleteBin6Fill/>
+                </NavLink>
+
                 <h4>{todoLists.name}</h4>
+
 
                 <div className="inputTodo">
                   <input className="inputAddTodo" type="text" placeholder="Nombre de la Tarea"
@@ -167,6 +179,7 @@ const mapDispatchToProps = (dispatch) =>
   ({
     addTodoList: (id, name) => addTodoInList(dispatch, id, name),
     orderContainer: (newOrderListContainer) => listContainerOrder(dispatch, newOrderListContainer),
+    deleteList: (idTodoList) => deleteTodoList(dispatch, idTodoList),
 
 
   });

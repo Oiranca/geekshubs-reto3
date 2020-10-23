@@ -101,6 +101,7 @@ const Todo = (props) => {
 
 
     } else {
+
       const idToDrop = event.currentTarget.dataset.parent;
       props.moveTodo(parentFrom, idToDrop, idTodoToMove);
 
@@ -113,8 +114,7 @@ const Todo = (props) => {
   const onDragEnd = (event) => {
 
 
-
-    if (props.dropEnter !== '') {
+    if (props.dropEnter !== '' && event.currentTarget.id!==undefined) {
 
       props.moveTodo(props.idParent, props.dropEnter, event.currentTarget.id);
 
