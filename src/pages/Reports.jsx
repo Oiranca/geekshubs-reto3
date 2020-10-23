@@ -1,6 +1,6 @@
 import React from 'react'
-import FirstNav from "../componets/boards/firstNav/FirstNav";
-import SecondNav from "../componets/boards/secondNav/SecondNav";
+import FirstNav from "../components/boards/firstNav/FirstNav";
+import SecondNav from "../components/boards/secondNav/SecondNav";
 
 const Reports =()=> {
     return (
