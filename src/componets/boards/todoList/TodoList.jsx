@@ -57,7 +57,8 @@ const TodoList = (props) => {
 
 
   const onDragOver = (event) => {
-    containerEnter = Number(event.currentTarget.id);
+//Para coger el id del todlist donde voy hacer drop
+    containerEnter = Number(event.currentTarget.id)
     event.preventDefault();
     newLists = dragAndDropList.originalOrderList;
     const draggedFromList = dragAndDropList.draggedFromList;
@@ -100,11 +101,10 @@ const TodoList = (props) => {
         draggedToList: null,
         isDraggingList: false
       });
-      containerEnter = '';
 
     }
 
-
+    containerEnter = '';
   };
 
 
