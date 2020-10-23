@@ -16,7 +16,7 @@ const initialDnDState = {
 
 }
 let newList;
-let parentFrom=0;
+let parentFrom;
 let idTodoToMove;
 
 
@@ -45,14 +45,15 @@ const Todo = (props) => {
       isDragging: true,
       originalOrder: list,
     })
-    parentFrom =props.idParent;
-    idTodoToMove=Number(event.currentTarget.id);
+    parentFrom = props.idParent;
+    idTodoToMove = Number(event.currentTarget.id);
 
   };
 
   const onDragOver = (event) => {
 
     event.preventDefault();
+
     newList = dragAndDrop.originalOrder;
     const draggedFrom = dragAndDrop.draggedFrom;
     const draggedTo = Number(event.currentTarget.dataset.position);
@@ -81,13 +82,14 @@ const Todo = (props) => {
 
   };
 
+
+
   const onDrop = (event) => {
 
 
-    if (props.idParent===parentFrom) {
+    if (props.idParent === parentFrom) {
 
       props.order(parentFrom, newList)
-
       setDragAndDrop({
         ...dragAndDrop,
         draggedFrom: null,
@@ -96,9 +98,13 @@ const Todo = (props) => {
 
       });
 
+
+
     } else {
       const idToDrop = event.currentTarget.dataset.parent;
       props.moveTodo(parentFrom, idToDrop, idTodoToMove);
+
+      idTodoToMove = '';
 
     }
   };
@@ -106,13 +112,16 @@ const Todo = (props) => {
 
   const onDragEnd = (event) => {
 
-    if (props.dropEnter !== undefined && props.dropEnter !== '' && event !== undefined) {
+
+
+    if (props.dropEnter !== '') {
 
       props.moveTodo(props.idParent, props.dropEnter, event.currentTarget.id);
 
     }
 
   }
+
   return (
 
     <React.Fragment>
