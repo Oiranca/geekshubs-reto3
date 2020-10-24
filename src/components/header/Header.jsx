@@ -16,7 +16,7 @@ const Header = (props) => {
                         <span className="linkMain">Iniciar Sesión</span>
 
                     </NavLink>
-                    <NavLink to="/signUp">
+                    <NavLink to="/boardsMain">
                         <span className="linkMain">Registrase</span>
                     </NavLink>
                 </div>

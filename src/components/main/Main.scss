@@ -5,14 +5,13 @@
   display: flex;
   flex-direction: row;
   margin: auto;
-  padding: 2rem;
-
-  border-right: $Brown_Light_Theme 2px solid;
-  border-left: $Brown_Light_Theme 2px solid;
-  border-radius: 2rem;
 
   .articleMain {
-    margin: auto;
+    margin: auto 3rem;
+    padding: 2rem;
+    border-right: $Brown_Light_Theme 2px solid;
+    border-left: $Brown_Light_Theme 2px solid;
+    border-radius: 2rem;
 
     h3 {
       text-align: center;
@@ -47,6 +46,7 @@
 
 
   }
+
 
 
 }

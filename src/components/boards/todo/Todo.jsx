@@ -114,7 +114,7 @@ const Todo = (props) => {
   const onDragEnd = (event) => {
 
 
-    if (props.dropEnter !== '' && event.currentTarget.id!==undefined) {
+    if (props.dropEnter!==undefined && props.dropEnter !== '' && event.currentTarget.id!==undefined) {
 
       props.moveTodo(props.idParent, props.dropEnter, event.currentTarget.id);
 
