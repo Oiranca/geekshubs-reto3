@@ -1,68 +1,70 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# **Reto 3 - Trello**
 
-## Available Scripts
+* ##  ***Índice***
 
-In the project directory, you can run:
+1. [**Resumen del reto**](#resumen)
+2. [**Instalación**](#instalacion)
+3. [**Descripción de lo realizado**](#realizado) 
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+<div id="resumen"/>
 
-### `npm test`
+## ***1- Resumen del reto***
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 1. Tecnologías:
 
-### `npm run build`
+* HTML5 / CSS3
+* REACT
+* Git
+* ES6
+* Bootstrap
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 2. Extra points:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+* Uso de FlexBox o GridLayout
+* Uso de REDUX
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 3. Funcionamiento:
 
-### `npm run eject`
+* Una vez creado las listas nos debería permitir crear internamente las tareas.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* Debemos disponer de las herramientas suficientes para poder eliminar las tareas y las listas.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Al igual que en Trello las listas las debemos organizar por columnas, e internamente las tareas debemos también poder organizarlas internamente.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 4. El proyecto se evaluará por:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* Uso correcto de React
+* Especificación ES6
+* README completo en Github
 
-## Learn More
+### 5. Extra:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* Uso de Redux
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<div id="instalacion"/>
 
-### Code Splitting
+## **2- Instalación**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Para poder usar la aplicación y comprobar su funcionamiento y que se instalen todas las dependencias, debemos una vez clonado el repositorio usar el comando:
 
-### Analyzing the Bundle Size
+### **`npm install`**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+<div id="realizado"/>
 
-### Making a Progressive Web App
+## **3- Descripción de lo realizado**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+En el proyecto podremos ver una primera página donde hemos puesto un **navbar** con sus dos link para **inicial sesión o registrarse**, actualmente no llevan a la misma ruta que sería la página donde podremos crear los **todo** y su respectivas listas, ya que el proeyecto se basa en poder crear **listas** y dentro de estas listas crear **card o pequeños todo**, además de poder poner completado la taréa o eleminar tanto la lista como los todos.
 
-### Advanced Configuration
+### ***3.1- Estructura de directorios***
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+1. **SRC:** Donde tenemos todos los archivos necesarios para la aplicación.
 
-### Deployment
+2. **SRC/COMPONENTES:** Donde tenemos creados todos los componentes que constituyen nuestra aplicación.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+3. **SRC/IMG:** Aquí básicamente tenmos todas las imágenes usadas en la aplicación, menos los icónos que depende de una librería llamada [***React-Icons***](https://react-icons.github.io/react-icons/). 
 
-### `npm run build` fails to minify
+4. **SRC/SERVICE:** En este directorio donde tenesmo los servicios para la aplicación.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+5. **SRC/STYLE:** Aquí he puesto los estilos comunes en la aplicación, ya que cada componente también tiene sus estilos propios.
