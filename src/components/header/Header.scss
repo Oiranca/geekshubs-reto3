@@ -8,6 +8,9 @@
   position: sticky;
   top: 0;
   overflow: hidden;
+  height: 6rem;
+  align-items: center;
+
 
 
   img {
@@ -18,14 +21,14 @@
     margin-left: 0.8rem;
     margin-bottom: 0.3rem;
     margin-top: 0.3rem;
-    width: 8%;
+    height: 5rem;
 
 
   }
 
   .buttonMain {
     cursor: pointer;
-    margin: 3rem;
+
 
     a {
       all: unset;

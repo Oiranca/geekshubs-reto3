@@ -6,7 +6,7 @@ import automatic from '../../img/main/automatizacion.png'
 import {NavLink} from "react-router-dom";
 import Header from "../header/Header";
 
-const Main = (props) => {
+const Main = () => {
 
     return (
         <React.Fragment>
@@ -20,7 +20,7 @@ const Main = (props) => {
 
                     <p>Con la herramienta <b>Cards and Tasks</b> podrá organizar todo lo necesario para llevar a cabo
                         las tareas tanto individuales como del equipo de trabajo.</p>
-                    <NavLink to="/signUp">
+                    <NavLink to="/boardsMain">
                         <span className="linkMain">Comenzar...</span>
                     </NavLink>
 
@@ -57,7 +57,7 @@ const Main = (props) => {
             </section>
 
 
-            <div className="containerMain">
+            <section className="containerMain">
                 <div className="articleMain">
 
                     <h3>
@@ -73,7 +73,7 @@ const Main = (props) => {
                     <img src={automatic} alt="automatic"/>
                 </div>
 
-            </div>
+            </section>
         </React.Fragment>
 
 

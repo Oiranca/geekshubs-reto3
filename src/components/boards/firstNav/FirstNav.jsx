@@ -9,12 +9,13 @@ import menuInfo from "../../../img/icon/informacion.svg";
 import menuNotification from "../../../img/icon/alarma.svg";
 import menuProfile from "../../../img/icon/usuario.svg";
 import './FirstNav.scss'
+import {NavLink} from "react-router-dom";
 
 
 
 
 
-const FirstNav =(prop)=>{
+const FirstNav =()=>{
 
     const valueX = "4";
     const valueY = "4"
@@ -27,13 +28,17 @@ const FirstNav =(prop)=>{
                         <image href={menuDots} x={valueX} y={valueY}/>
                     </svg>
                 </button>
-                <button className="header-button" type="submit">
+                <NavLink to="/">
+                    <button className="header-button" type="submit">
 
-                    <svg>
-                        <image href={menuHome} x={valueX} y={valueY}/>
-                    </svg>
+                        <svg>
+                            <image href={menuHome} x={valueX} y={valueY}/>
+                        </svg>
 
-                </button>
+                    </button>
+
+                </NavLink>
+
                 <button className="header-button" type="submit">
                     <svg>
                         <image href={menuBoards} x={valueX} y={valueY}/>
