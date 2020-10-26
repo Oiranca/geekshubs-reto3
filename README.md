@@ -47,7 +47,7 @@
 
 ## **2- Instalación**
 
-Para poder usar la aplicación y comprobar su funcionamiento y que se instalen todas las dependencias, debemos una vez clonado el repositorio usar el comando:
+Para poder usar la aplicación y comprobar su funcionamiento, debemos una vez clonado el repositorio usar el comando:
 
 ### **`npm install`**
 
@@ -55,7 +55,16 @@ Para poder usar la aplicación y comprobar su funcionamiento y que se instalen t
 
 ## **3- Descripción de lo realizado**
 
-En el proyecto podremos ver una primera página donde hemos puesto un **navbar** con sus dos link para **inicial sesión o registrarse**, actualmente no llevan a la misma ruta que sería la página donde podremos crear los **todo** y su respectivas listas, ya que el proeyecto se basa en poder crear **listas** y dentro de estas listas crear **card o pequeños todo**, además de poder poner completado la taréa o eleminar tanto la lista como los todos.
+En el proyecto podremos ver una primera página donde hemos puesto un **navbar** con sus dos link para **inicial sesión o registrarse**, actualmente llevan a la misma ruta que sería la página donde podremos crear los **todo** y su respectivas listas, ya que el proyecto se basa en poder crear **listas** y dentro de estas listas crear **card o pequeños todo**, además de poder editar o eleminar tanto la lista como los todos.
+
+Para todo ello hemos usado:
+
+* [**HTML5**](https://developer.mozilla.org/es/docs/HTML/HTML5)
+* [**SASS**](https://sass-lang.com/)
+* [**REACT /REACT-REDUX / REACT-ROUTER**](https://es.reactjs.org/)
+* [**BOOTSTRAP**](https://getbootstrap.com/)
+* [**REACT-BOOTSTRAP**](https://react-bootstrap.github.io/)
+* [**REACT-ICONS**](https://react-icons.github.io/react-icons/)
 
 ### ***3.1- Estructura de directorios***
 
@@ -68,3 +77,5 @@ En el proyecto podremos ver una primera página donde hemos puesto un **navbar**
 4. **SRC/SERVICE:** En este directorio donde tenesmo los servicios para la aplicación.
 
 5. **SRC/STYLE:** Aquí he puesto los estilos comunes en la aplicación, ya que cada componente también tiene sus estilos propios.
+
+![](https://i.imgur.com/BpM0m8j.png)     ![](https://i.imgur.com/nXbIaTQ.png)
